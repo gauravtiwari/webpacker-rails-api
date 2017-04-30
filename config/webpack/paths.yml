@@ -2,11 +2,11 @@
 
 default: &default
   config: config/webpack
-  entry: packs
+  entry: app
   output: public
   manifest: manifest.json
   node_modules: node_modules
-  source: app/javascript
+  source: frontend
   extensions:
     - .coffee
     - .js
