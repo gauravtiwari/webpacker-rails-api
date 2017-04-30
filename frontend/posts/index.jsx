@@ -9,7 +9,7 @@ export default class Posts extends Component {
   }
 
   fetchPosts = () => {
-    fetch('http://localhost:5000/api/posts', {
+    fetch(`${process.env.API_URL}/api/posts`, {
       method: 'get',
       mode: 'cors',
       headers: new Headers({

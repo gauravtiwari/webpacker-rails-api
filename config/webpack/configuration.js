@@ -13,7 +13,7 @@ const devServer = safeLoad(readFileSync(join(configPath, 'development.server.yml
 // Compute public path based on environment and ASSET_HOST in production
 const ifHasCDN = env.ASSET_HOST !== undefined && env.NODE_ENV === 'production'
 const devServerUrl = `http://${devServer.host}:${devServer.port}/`
-const publicUrl = ifHasCDN ? `${env.ASSET_HOST}/${paths.entry}/` : `/${paths.entry}/`
+const publicUrl = ifHasCDN ? `${env.ASSET_HOST}/` : `/`
 env.ASSET_URL = ifHasCDN ? publicUrl : devServerUrl
 const publicPath = env.NODE_ENV !== 'production' ? devServerUrl : publicUrl
 

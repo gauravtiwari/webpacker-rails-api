@@ -18,5 +18,5 @@
 !/tmp/.keep
 
 .byebug_history
-/public/app
+/public/static/*
 /node_modules

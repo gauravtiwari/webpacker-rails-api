@@ -8,7 +8,10 @@ const CompressionPlugin = require('compression-webpack-plugin')
 const sharedConfig = require('./shared.js')
 
 module.exports = merge(sharedConfig, {
-  output: { filename: '[name]-[chunkhash].js' },
+  output: {
+    filename: 'static/js/[name]-[hash].js',
+    chunkFilename: 'static/js/[name]-[hash].js',
+  },
 
   plugins: [
     new webpack.optimize.UglifyJsPlugin(),

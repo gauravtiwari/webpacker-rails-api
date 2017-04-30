@@ -44,7 +44,8 @@ module.exports = {
       ASSET_URL: env.ASSET_URL
     }),
 
-    new ExtractTextPlugin(env.NODE_ENV === 'production' ? '[name]-[hash].css' : '[name].css'),
+    new ExtractTextPlugin(
+      env.NODE_ENV === 'production' ? 'static/css/[name]-[hash].css' : '[name].css'),
 
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor', // Vendor code
@@ -73,7 +74,6 @@ module.exports = {
 
     new HtmlWebpackPlugin({
       inject: 'body',
-      hash: true,
       alwaysWriteToDisk: true,
       template: resolve(paths.output, 'index.html')
     }),

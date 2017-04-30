@@ -6,6 +6,7 @@
     "autoprefixer": "^6.7.7",
     "babel-core": "^6.24.1",
     "babel-loader": "7.x",
+    "babel-plugin-transform-inline-environment-variables": "^0.0.2",
     "babel-preset-env": "^1.4.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-react-app": "^2.2.0",

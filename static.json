@@ -1,0 +1,28 @@
+{
+  "root": "public/app",
+  "https_only": true,
+  "routes": {
+    "/posts/*": "index.html",
+    "/static/js/*": "/static/js/",
+    "/static/css/*": "/static/css/",
+    "/static/images/*": "/static/images/",
+    "/*": "index.html"
+  },
+  "proxies": {
+    "/api/": {
+      "origin": "https://webpacker-rails-api.herokuapp.com/"
+    }
+  },
+  "clean_urls": true,
+  "headers": {
+    "/": {
+      "Cache-Control": "no-store, no-cache"
+    },
+    "/app/static/js/**.js": {
+      "Cache-Control": "public, max-age=31536000"
+    },
+    "/app/static/css/**.css": {
+      "Cache-Control": "public, max-age=31536000"
+    }
+  }
+}

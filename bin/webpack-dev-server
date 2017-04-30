@@ -28,6 +28,6 @@ rescue Errno::ENOENT, NoMethodError
 end
 
 Dir.chdir(APP_PATH) do
-  exec "ASSET_URL=/packs NODE_PATH=#{NODE_MODULES_PATH} #{WEBPACK_BIN} --progress --color " \
+  exec "API_URL=http://localhost:5000 ASSET_URL=/packs NODE_PATH=#{NODE_MODULES_PATH} #{WEBPACK_BIN} --progress --color " \
     "--config #{DEV_SERVER_CONFIG} #{ARGV.join(" ")}"
 end
