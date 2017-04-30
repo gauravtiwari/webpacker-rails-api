@@ -18,5 +18,5 @@
 !/tmp/.keep
 
 .byebug_history
-/public/packs
+/public/app
 /node_modules
