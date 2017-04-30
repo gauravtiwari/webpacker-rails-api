@@ -10,7 +10,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin')
 const InterpolateHtmlPlugin = require('interpolate-html-plugin')
-const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
+const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin')
+const ManifestPlugin = require('webpack-manifest-plugin')
 const extname = require('path-complete-extname')
 const { env, paths, publicPath, loadersDir } = require('./configuration.js')
 
@@ -77,7 +78,8 @@ module.exports = {
       template: resolve(paths.output, 'index.html')
     }),
 
-    new HtmlWebpackHarddiskPlugin
+    new HtmlWebpackHarddiskPlugin,
+    new ManifestPlugin({ fileName: paths.manifest, publicPath, writeToFileEmit: true })
   ],
 
   resolve: {
