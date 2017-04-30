@@ -1,2 +1,2 @@
-web: bundle exec rails s
-webpacker: ./bin/webpack-dev-server
+web: bin/start-nginx bundle exec rails s
+webpacker: bin/start-nginx yarn serve
